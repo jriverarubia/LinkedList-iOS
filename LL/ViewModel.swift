@@ -10,7 +10,7 @@ import Foundation
 protocol ViewModelInput {
     func addValue(value: String)
     func remove(index: Int)
-    func getList() -> [String]
+    func getList() -> [Node<String>]
 }
 
 protocol ViewModelOutput {
@@ -22,22 +22,20 @@ class ViewModel {
     
     fileprivate let linkedList: LinkedList<String>
     var output: ViewModelOutput?
-    var list: [String] = []
     
     init(linkedList: LinkedList<String>) {
         self.linkedList = linkedList
-        list = linkedList.getValues()
     }
     
     private func updateList() {
-        list = linkedList.getValues()
         self.output?.listUpdated()
     }
 }
 
 extension ViewModel: ViewModelInput {
-    func getList() -> [String] {
-        return list
+    
+    func getList() -> [Node<String>] {
+        return linkedList.getValues()
     }
     
     func addValue(value: String) {
@@ -49,7 +47,7 @@ extension ViewModel: ViewModelInput {
         let node = linkedList.nodeAt(index: index)
         if let node = node {
             let removedNode = linkedList.remove(node: node)
-            self.output?.showMessage(title: "Information", body: "Node with value  \(removedNode) has been removed correctly")
+            self.output?.showMessage(title: "Information", body: "Node with value \(removedNode) has been removed correctly")
             self.updateList()
         } else {
             self.output?.showMessage(title: "Error", body: "Error deleting node.")

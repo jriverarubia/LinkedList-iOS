@@ -33,7 +33,7 @@
                     <navigationItem key="navigationItem" title="Linked List" id="WAN-Bx-VaW">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bRN-OC-wQu">
                             <connections>
-                                <action selector="didTapAddNode:" destination="BYZ-38-t0r" id="88i-Q3-H8s"/>
+                                <action selector="didTapAddNodeButton:" destination="BYZ-38-t0r" id="RVF-fX-gFW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

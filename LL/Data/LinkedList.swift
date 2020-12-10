@@ -77,13 +77,11 @@ public class LinkedList<T> {
         return node.value
     }
     
-    public func getValues() -> [T] {
+    public func getValues() -> [Node<T>] {
         var node = head
-        var values: [T] = []
+        var values: [Node<T>] = []
         while node != nil {
-            if let value = node?.value {
-                values.append(value)
-            }
+            values.append(node!)
             node = node?.next
         }
         
