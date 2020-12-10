@@ -76,4 +76,17 @@ public class LinkedList<T> {
         node.next = nil
         return node.value
     }
+    
+    public func getValues() -> [T] {
+        var node = head
+        var values: [T] = []
+        while node != nil {
+            if let value = node?.value {
+                values.append(value)
+            }
+            node = node?.next
+        }
+        
+        return values
+    }
 }
