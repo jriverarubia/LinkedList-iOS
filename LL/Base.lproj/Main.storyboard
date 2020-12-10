@@ -31,7 +31,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Linked List" id="WAN-Bx-VaW">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bRN-OC-wQu"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bRN-OC-wQu">
+                            <connections>
+                                <action selector="didTapAddNode:" destination="BYZ-38-t0r" id="88i-Q3-H8s"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="mainTableView" destination="zSK-To-l9Z" id="QVf-Lw-nBe"/>
